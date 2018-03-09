@@ -53,7 +53,7 @@ Because `ftp_report.siteconfig.sh` contains username and password information, y
     sudo chown INSTANCE-koha:INSTANCE-koha /var/lib/koha/INSTANCE/ftp_report.siteconfig.sh
     sudo chmod 600 /var/lib/koha/INSTANCE/ftp_report.siteconfig.sh
 
-Assuming that the branch data report is report number `20`, and the lendig data report is `21`, the cron entry in `/etc/init.d/koah-instance`. Some of this information may already be present in the file.
+Assuming that the branch data report is report number `20`, and the lendig data report is `21`, Add the following text to `/etc/init.d/koah-INSTANCE`. The file may or may not exist; add whatever is missing. The file should be owned by `root`.
 
 
     #!/bin/bash
