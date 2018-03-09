@@ -69,6 +69,6 @@ Assuming that the branch data report is report number `20`, and the lendig data 
     KOHA_CONF=/etc/koha/sites/INSTANCE/koha-conf.xml
     KOHA_CRON_PATH=/usr/share/koha/bin/cronjobs
 
-    0 1 * * 1 hunton-INSTANCE $HOMEDIR/ftp_report.sh 20 BRANCHDATA_SYSTEMCODE
-    1 1 * * 1 hunton-INSTANCE $HOMEDIR/ftp_report.sh 21 LENDINGDATA_SYSTEMCODE
+    0 1 * * 1 INSTANCE-koha $HOMEDIR/ftp_report.sh 20 BRANCHDATA_SYSTEMCODE
+    1 1 * * 1 INSTANCE-koha $HOMEDIR/ftp_report.sh 21 LENDINGDATA_SYSTEMCODE
 
