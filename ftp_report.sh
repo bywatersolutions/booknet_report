@@ -55,7 +55,7 @@ fi
 
 ftp -pin $FTPSERVER <<EOF
 user $FTPUSERNAME $FTPPASSWORD
-put $KOHAHOMEDIR/${ID_LIST_FILE}
+put ${ID_LIST_FILE}
 quit
 EOF
 
