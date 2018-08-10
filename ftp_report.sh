@@ -6,7 +6,9 @@
 #
 # Usage: ./ftp_report.sh REPORT_NUMBER FILENAME_BASE
 # e.g. ./ftp_report.sh 170 BRANCHDATA_HUNTON
-
+#
+# The script back-dates the file name by 1 day, as it is assumed to be running
+# in the early morning. 
 PERL=$(which perl)
 ID_REPORT_NUMBER="${1}"
 FILE_BASE="${2}"
@@ -44,7 +46,7 @@ FTPFILE="$EXPORTFILE.gz"
 # run exportbiblios.pl and create the marc export
 cd $KOHAHOMEDIR
 
-export ID_LIST_FILE="${FILE_BASE}_$(date +%m%d%Y).${FILE_TYPE}"
+export ID_LIST_FILE="${FILE_BASE}_$(date +%m%d%Y -d '1 day ago').${FILE_TYPE}"
 
 $KOHA_CRON_PATH/runreport.pl --format=csv ${ID_REPORT_NUMBER} > $KOHAHOMEDIR/${ID_LIST_FILE}
 

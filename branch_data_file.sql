@@ -23,7 +23,7 @@ UNION
         branchstate,
         branchcountry) AS Address,
         COUNT(borrowernumber) AS 'User count',
-        DATE_FORMAT(CURRENT_DATE, "%m/%d/%Y") as Date
+        DATE_FORMAT( DATE_SUB( CURRENT_DATE, INTERVAL 1 DAY ), "%m/%d/%Y") as Date
     FROM
         borrowers
     JOIN

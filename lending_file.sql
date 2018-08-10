@@ -21,7 +21,7 @@ UNION
         Count( DISTINCT items.itemnumber) AS Copies,
         COUNT(DISTINCT onloan) AS 'Copies Out',
         SUM(notforloan=-7) AS Ordered,
-        DATE_FORMAT(CURRENT_DATE, "%m/%d/%Y") as Date
+        DATE_FORMAT( DATE_SUB( CURRENT_DATE, INTERVAL 1 DAY ), "%m/%d/%Y") as Date
     FROM
         items
         JOIN biblio USING (biblionumber)

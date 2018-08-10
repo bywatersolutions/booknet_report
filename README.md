@@ -18,6 +18,8 @@ on the console of your Koha server.
 
 From this point forward `SYSTEMCODE` will refer to your booknet system code, and `INSTANCE` will refer to your Koha instance name.
 
+NOTE: the reports and scripts are assumed to be running early in the morning on the day after the date range in the report. The 'date' mentioned in the report, as well as the embedded dates in the file names are _back dated by one day_.
+
 ## Setting up the reports
 
 Copy the contents of `branch_data_file.sql` and `lending_file.sql` into new SQL reports. Make sure that you note the report number for each report.
@@ -53,8 +55,8 @@ Because `ftp_report.siteconfig.sh` contains username and password information, y
     sudo chown INSTANCE-koha:INSTANCE-koha /var/lib/koha/INSTANCE/ftp_report.siteconfig.sh
     sudo chmod 600 /var/lib/koha/INSTANCE/ftp_report.siteconfig.sh
 
-Assuming that the branch data report is report number `20`, and the lendig data report is `21`, Add the following text to `/etc/init.d/koah-INSTANCE`. The file may or may not exist; add whatever is missing. The file should be owned by `root`.
 
+Assuming that the branch data report is report number `20`, and the lendig data report is `21`, Add the following text to `/etc/init.d/koah-INSTANCE`. The file may or may not exist; add whatever is missing. The file should be owned by `root`.
 
     #!/bin/bash
     # /etc/cron.d/koha-INSTANCE
